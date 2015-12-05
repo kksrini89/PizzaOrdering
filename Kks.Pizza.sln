@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kks.Pizza", "Kks.Pizza\Kks.Pizza.csproj", "{78B504AE-C988-467E-8082-EE2BFE57A461}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kks.Service", "Kks.Service\Kks.Service.csproj", "{A22A703B-1E7F-4B5C-8660-887E77B6812E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{78B504AE-C988-467E-8082-EE2BFE57A461}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78B504AE-C988-467E-8082-EE2BFE57A461}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78B504AE-C988-467E-8082-EE2BFE57A461}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A22A703B-1E7F-4B5C-8660-887E77B6812E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A22A703B-1E7F-4B5C-8660-887E77B6812E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A22A703B-1E7F-4B5C-8660-887E77B6812E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A22A703B-1E7F-4B5C-8660-887E77B6812E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
