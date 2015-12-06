@@ -5,30 +5,66 @@
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/bootstrap-theme.css" rel="stylesheet" />
     <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
+    <link href="Content/custom.css" rel="stylesheet" />
     <script src="Scripts/jquery-2.1.4.js"></script>
     <script src="Scripts/bootstrap.js"></script>
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-ui-router.js"></script>
     <script src="Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
+    <script src="Scripts/angular-resouce.js"></script>
     <script src="App/app.js"></script>
+    <script src="App/Products/controllers/productController.js"></script>
+    <script src="App/Order/controllers/orderController.js"></script>
+    <script src="App/Delivery/controllers/deliveryController.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="row">
-            <nav class="navbar navbar-default">
+            <nav class="navbar navbar-inverse">
+                <div class="container">
+                    <a data-ui-sref="Home" class="navbar navbar-brand">Kks Pizza</a>
+                    <div class="navbar-header">
+                        <button type="button"
+                                class="navbar-toggle"
+                                data-toggle="collapse"
+                                data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle Navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a data-ui-sref="Menu">Menu</a></li>
+                            <li><a data-ui-sref="Order">Order</a></li>
+                            <li><a data-ui-sref="Delivery">Delivery</a></li>
+                            <li><a><i class="glyphicon glyphicon-plus"></i>Add Product</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div data-ui-view=""></div>
+
+    <!--<div class="container">
+        <div class="row">
+            <nav class="navbar navbar-inverse">
                 <div class="navbar-header">
                     <ul class="nav navbar-nav">
-                        <li><span class="navbar-brand">Pizza Order</span></li>
+                        <li><a class="navbar-brand">Kks Pizza</a></li>
                     </ul>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#"><u>M</u>enu</a></li>
-                        <li><a href="#"><u>O</u>rder</a></li>
+                        <li><a href="#">Order</a></li>
+                        <li><a href="#">Delivery</a></li>
                     </ul>
-                </div><!--/.nav-collapse -->
+                </div>
             </nav>
         </div>
-    </div>
+    </div>-->
 </body>
 </html>
