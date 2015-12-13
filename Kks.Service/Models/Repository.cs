@@ -21,7 +21,7 @@ namespace Kks.Service.Models
 
         internal List<Product> Retrieve()
         {
-            var filePath = HostingEnvironment.MapPath(@"~/app/App_Data/items.json");
+            var filePath = HostingEnvironment.MapPath(@"~/App_Data/items.json");
             var contents = File.ReadAllText(filePath);
             return JsonConvert.DeserializeObject<List<Product>>(contents);
         }

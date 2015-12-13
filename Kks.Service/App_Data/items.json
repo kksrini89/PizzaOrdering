@@ -1,9 +1,10 @@
 ﻿[
   {
-    "Description": "Five pepper pizza tasty.",
+    "Description": "Five pepper pizza tasty",
     "Price": 19.95,   
     "ProductId": 1,
     "ProductName": "Leaf Rake",
+	"ImageUrl":"http://images8.alphacoders.com/369/369063.jpg",
     "ReleaseDate": "2009-03-19T00:00:00-07:00"
   },
   {
@@ -11,6 +12,7 @@
     "Price": 32.99,    
     "ProductId": 2,
     "ProductName": "Garden Cart",
+	"ImageUrl":"http://images8.alphacoders.com/369/369063.jpg",
     "ReleaseDate": "2010-03-18T00:00:00-07:00"
   },
   {
@@ -18,6 +20,7 @@
     "Price": 9.99,   
     "ProductId": 3,
     "ProductName": "Hand Cultivator",
+	"ImageUrl":"http://images8.alphacoders.com/369/369063.jpg",
     "ReleaseDate": "2012-03-18T00:00:00-07:00"
   },
   {
@@ -25,6 +28,7 @@
     "Price": 6.99,    
     "ProductId": 4,
     "ProductName": "Hand Trowel",
+	"ImageUrl":"http://images8.alphacoders.com/369/369063.jpg",
     "ReleaseDate": "2013-03-22T00:00:00-07:00"
   },
   {
@@ -32,6 +36,7 @@
     "Price": 8.99,  
     "ProductId": 5,
     "ProductName": "Hammer",
+	"ImageUrl":"http://images8.alphacoders.com/369/369063.jpg",
     "ReleaseDate": "2013-05-21T00:00:00-07:00"
   },
   {
@@ -39,6 +44,7 @@
     "Price": 12.99,   
     "ProductId": 6,
     "ProductName": "Wrench",
+	"ImageUrl":"http://images8.alphacoders.com/369/369063.jpg",
     "ReleaseDate": "2013-05-15T00:00:00-07:00"
   },
   {
@@ -46,6 +52,7 @@
     "Price": 15.29,   
     "ProductId": 7,
     "ProductName": "Push Mower",
+	"ImageUrl":"http://images8.alphacoders.com/369/369063.jpg",
     "ReleaseDate": "2008-05-01T00:00:00-07:00"
   },
   {
@@ -53,6 +60,7 @@
     "Price": 11.55,   
     "ProductId": 8,
     "ProductName": "Saw",
+	"ImageUrl":"http://images8.alphacoders.com/369/369063.jpg",
     "ReleaseDate": "2009-05-15T00:00:00-07:00"
   },
   {
@@ -60,6 +68,7 @@
     "Price": 13.95,    
     "ProductId": 9,
     "ProductName": "Pipe Wrench",
+	"ImageUrl":"http://images8.alphacoders.com/369/369063.jpg",
     "ReleaseDate": "2009-06-15T00:00:00-07:00"
   },
   {
@@ -67,6 +76,7 @@
     "Price": 35.95,   
     "ProductId": 10,
     "ProductName": "Video Game Controller",
+	"ImageUrl":"http://images8.alphacoders.com/369/369063.jpg",
     "ReleaseDate": "2002-10-15T00:00:00-07:00"
   },
   {
@@ -74,6 +84,7 @@
     "Price": 0.0,   
     "ProductId": 11,
     "ProductName": "iWatch",
+	"ImageUrl":"http://images8.alphacoders.com/369/369063.jpg",
     "ReleaseDate": "2015-03-10T16:55:08.535279-07:00"
   }
 ]
