@@ -57,8 +57,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App\Delivery\controllers\deliveryController.js" />
-    <Content Include="App\Delivery\partials\delivery.html" />
+    <Content Include="App\End\controllers\endController.js" />
+    <Content Include="App\End\partials\end.html" />
     <Content Include="App\MainPage.html" />
     <Content Include="App\Order\controllers\orderController.js" />
     <Content Include="App\Order\partials\order.html" />

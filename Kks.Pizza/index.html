@@ -16,7 +16,8 @@
     <script src="App/Products/controllers/productController.js"></script>
     <script src="App/Products/services/productResource.js"></script>
     <script src="App/Order/controllers/orderController.js"></script>
-    <script src="App/Delivery/controllers/deliveryController.js"></script>
+    <script src="App/End/controllers/endController.js"></script>
+    <!--<script src="App/Delivery/controllers/deliveryController.js"></script>-->
 </head>
 <body>
     <div class="container">
@@ -38,9 +39,9 @@
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li><a data-ui-sref="Menu">Menu</a></li>
-                            <li><a data-ui-sref="Order">Order</a></li>
-                            <li><a data-ui-sref="Delivery">Delivery</a></li>
-                            <li><a><i class="glyphicon glyphicon-plus"></i>Add Product</a></li>
+                            <li><a data-ui-sref="CustomerDetails"><u>C</u>ustomer Details</a></li>
+                            <li><a data-ui-sref="End"><u>E</u>nd</a></li>
+                            <!--<li><a><i class="glyphicon glyphicon-plus"></i>Add Product</a></li>-->
                         </ul>
                     </div>
                 </div>
@@ -48,24 +49,6 @@
         </div>
     </div>
 
-    <div data-ui-view=""></div>
-
-    <!--<div class="container">
-        <div class="row">
-            <nav class="navbar navbar-inverse">
-                <div class="navbar-header">
-                    <ul class="nav navbar-nav">
-                        <li><a class="navbar-brand">Kks Pizza</a></li>
-                    </ul>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="#">Order</a></li>
-                        <li><a href="#">Delivery</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </div>-->
+    <div data-ui-view=""></div>  
 </body>
 </html>

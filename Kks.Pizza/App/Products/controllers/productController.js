@@ -3,8 +3,13 @@
     angular.module('pizzaApp')
             .controller('productController', ['$scope', 'productResource', function ($scope, productResource) {
                 $scope.products = [];
-                productResource.query(function (data) {
-                    $scope.products = data;
-                });
+                $scope.products = productResource.getProducts();
+                $scope.selectedItems = function (item) {
+
+                }
+
+                //productResource.query(function (data) {
+                //    $scope.products = data;
+                //});
             }]);
 })();

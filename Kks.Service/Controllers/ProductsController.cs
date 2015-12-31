@@ -9,7 +9,7 @@ using System.Web.Http.Cors;
 
 namespace Kks.Service.Controllers
 {
-    [EnableCorsAttribute("http://localhost:46023/", "*", "*")]
+    [EnableCorsAttribute("http://localhost:46023", "*", "*")]
     public class ProductsController : ApiController
     {
         // GET api/products
