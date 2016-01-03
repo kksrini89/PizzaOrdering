@@ -1,11 +1,21 @@
-﻿<div class="container">
-    <div class="row">        
-        <a href="" ng-click="selectedItems(item )" class="col-sm-4 col-lg-4" ng-repeat="item in products">
-            <img ng-src="{{item.imageUrl}}" class="center-block" style="height:220px;width:220px;" alt="Responsive image" />
-            <div class="text-center">
-                <p>{{item.description}}</p>
-                <p>{{item.price|currency:"&#8377;"}}</p>
-            </div>
-        </a>
+﻿<div class="container" ng-cloak>
+    <div class="row">
+        <div class="col-md-9 col-sm-9 col-xs-8">
+            <a href="" ng-click="selectedItems(item)" class="col-sm-4 col-lg-4" ng-repeat="item in products">
+                <!--<input type="checkbox" class="checkbox" id="" />-->
+                <div>
+                    <img ng-src="{{item.imageUrl}}" class="center-block" style="height:220px;width:220px;" alt="Responsive image" />
+                </div>
+                <div class="text-center">
+                    <p>{{item.description}}</p>
+                    <p>{{item.price|currency:"&#8377;"}}</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-4">
+
+            Add to Cart : <input type="text" style="height:25px;width:35px;" value="{{selectedItemCount}}" id="selectedItemCountId" />
+            <input type="button" class="btn btn-primary" value="NEXT" ng-click="OnNextClick()" />
+        </div>
     </div>
 </div>

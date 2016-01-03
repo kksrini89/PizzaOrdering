@@ -14,6 +14,11 @@
         })
         .state('CustomerDetails', {
             url: '/customerdetails',
+            params: {
+                value: {
+                    array: true,
+                }
+            },
             templateUrl: 'App/Order/partials/order.html',
             controller: 'orderController'
         })
