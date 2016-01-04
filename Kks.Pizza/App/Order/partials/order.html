@@ -1,31 +1,58 @@
 ﻿<div class="container">
     <div class="row">
-        <form class="form-horizontal" name="DeliveryForm" novalidate>
+        <form class="form-horizontal" name="CustomerDetailsForm" novalidate>
             <fieldset>
                 <legend>Order Form</legend>
-                <div class="form-group">
+                <div class="form-group"
+                     ng-class="{'has-error':CustomerDetailsForm.customerName.$invalid}">
                     <label for="nameTxt" class="col-sm-2 control-label">Customer Name</label>
                     <div class="col-sm-4">
-                        <input class="form-control" autofocus type="text" id="nameTxt" placeholder="Customer Name" />
+                        <input class="form-control"
+                               autofocus
+                               type="text"
+                               id="nameTxt"
+                               name="customerName"
+                               placeholder="Customer Name"
+                               ng-model="customerName"
+                               required />
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group"
+                     ng-class="{'has-error':CustomerDetailsForm.mobileNumber.$invalid}">
                     <label for="phoneNumberTxt" class="col-sm-2 control-label">Mobile </label>
                     <div class="col-sm-4">
-                        <input type="text" id="phoneNumberTxt" class="form-control" placeholder="Mobile" />
+                        <input type="text"
+                               id="phoneNumberTxt"
+                               class="form-control"
+                               placeholder="Mobile"
+                               name="mobileNumber"
+                               ng-model="mobileNumber"
+                               ng-pattern="regexMobileNumber"
+                               required />
                     </div>
 
                 </div>
-                <div class="form-group">
+                <div class="form-group"
+                     ng-class="{'has-error':CustomerDetailsForm.address.$invalid}">
                     <label class="col-sm-2 control-label" for="addressTxt">Address</label>
                     <div class="col-sm-6">
-                        <input class="form-control" type="text" id="addressTxt" placeholder="Address" />
+                        <input class="form-control"
+                               type="text"
+                               id="addressTxt"
+                               placeholder="Address"
+                               name="address"
+                               ng-model="address"
+                               required />
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-4 col-md-offset-2">
                         <span style="width:80px;margin-right:10px;">
-                            <button class="btn btn-primary" ng-click="submit()">Submit</button>
+                            <button class="btn btn-primary"
+                                    ng-disabled="CustomerDetailsForm.$invalid"
+                                    ng-click="submit()">
+                                Submit
+                            </button>
                         </span>
                         <span style="width:70px;">
                             <button class="btn btn-default" ng-click="cancel()">Cancel</button>
