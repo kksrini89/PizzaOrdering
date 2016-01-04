@@ -5,13 +5,16 @@
                 $scope.products = [];
                 $scope.products = productResource.getProducts();
                 $scope.selectedItemCount = 0;
+                var temp = [];
                 $scope.selectedItems = function (item) {
-                    var temp = [];
-                    if (item != null)
+                    if (item != null) {
                         temp.push(item);
+                        $scope.selectedItemCount++;
+                    }
                 };
                 $scope.OnNextClick = function () {
-                    $state.go('CustomerDetails', {});
+                    if (angular.isDefined(temp) && temp.length > 0 && $scope.selectedItemCount > 0)
+                        $state.go('CustomerDetails', { products: temp });
                 };
 
                 //productResource.query(function (data) {

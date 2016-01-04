@@ -15,7 +15,7 @@
         .state('CustomerDetails', {
             url: '/customerdetails',
             params: {
-                value: {
+                products: {
                     array: true,
                 }
             },
