@@ -4,7 +4,8 @@
             <fieldset>
                 <legend>Order Form</legend>
                 <div class="form-group"
-                     ng-class="{'has-error':CustomerDetailsForm.customerName.$invalid}">
+                     ng-class="{'has-error':CustomerDetailsForm.customerName.$invalid &&
+                                            CustomerDetailsForm.customerName.$dirty}">
                     <label for="nameTxt" class="col-sm-2 control-label">Customer Name</label>
                     <div class="col-sm-4">
                         <input class="form-control"
@@ -13,27 +14,42 @@
                                id="nameTxt"
                                name="customerName"
                                placeholder="Customer Name"
-                               ng-model="customerName"
-                               required />
+                               ng-model="model.customerName"
+                               required
+                               ng-minlength="4"
+                               ng-maxlength="12" />
                     </div>
+                    <span class="help-block has-error">
+                        <span ng-show="CustomerDetailsForm.customerName.$error.required">Name is required.</span>
+                        <span ng-show="CustomerDetailsForm.customerName.$error.minlength">Need atlest 4 characters.</span>
+                        <span ng-show="CustomerDetailsForm.customerName.$error.maxlength">Can not exceed more than 12 characters.</span>
+                    </span>
+                    <!-- <span class="help-block has-error" ng-show="CustomerDetailsForm.customerName.$invalid">Name is required.</span>-->
                 </div>
                 <div class="form-group"
-                     ng-class="{'has-error':CustomerDetailsForm.mobileNumber.$invalid}">
+                     ng-class="{'has-error':CustomerDetailsForm.mobileNumber.$invalid &&
+                                            CustomerDetailsForm.mobileNumber.$dirty}">
                     <label for="phoneNumberTxt" class="col-sm-2 control-label">Mobile </label>
                     <div class="col-sm-4">
-                        <input type="text"
+                        <input type="number"
                                id="phoneNumberTxt"
                                class="form-control"
                                placeholder="Mobile"
                                name="mobileNumber"
-                               ng-model="mobileNumber"
-                               ng-pattern="regexMobileNumber"
-                               required />
+                               ng-model="model.mobileNumber"
+                               ng-minlength="10"
+                               ng-maxlength="10"
+                               required /><!--ng-pattern="regexMobileNumber"-->
                     </div>
-
+                    <span class="help-block has-error">
+                        <span ng-show="CustomerDetailsForm.mobileNumber.$error.required">Mobile number is required.</span>
+                        <span ng-show="CustomerDetailsForm.mobileNumber.$error.minlength">Need atlest 10 digits.</span>
+                        <span ng-show="CustomerDetailsForm.mobileNumber.$error.maxlength">Can not exceed more than 10 digits.</span>
+                    </span>
                 </div>
                 <div class="form-group"
-                     ng-class="{'has-error':CustomerDetailsForm.address.$invalid}">
+                     ng-class="{'has-error':CustomerDetailsForm.address.$invalid &&
+                                            CustomerDetailsForm.address.$dirty}">
                     <label class="col-sm-2 control-label" for="addressTxt">Address</label>
                     <div class="col-sm-6">
                         <input class="form-control"
@@ -41,16 +57,17 @@
                                id="addressTxt"
                                placeholder="Address"
                                name="address"
-                               ng-model="address"
+                               ng-model="model.address"
                                required />
                     </div>
+                    <span class="help-block has-error" ng-show="CustomerDetailsForm.address.$invalid"></span>
                 </div>
                 <div class="form-group">
                     <div class="col-md-4 col-md-offset-2">
                         <span style="width:80px;margin-right:10px;">
                             <button class="btn btn-primary"
                                     ng-disabled="CustomerDetailsForm.$invalid"
-                                    ng-click="submit()">
+                                    ng-click="submit(model)">
                                 Submit
                             </button>
                         </span>

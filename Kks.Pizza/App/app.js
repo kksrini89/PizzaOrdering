@@ -24,6 +24,9 @@
         })
         .state('End', {
             url: '/end',
+            params: {
+                customer: null
+            },
             templateUrl: 'App/End/partials/end.html',
             controller: 'endController'
         });
