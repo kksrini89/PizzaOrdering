@@ -10,6 +10,27 @@ namespace Kks.Service.Models
 {
     public class Repository
     {
+        internal bool CreateOrder(Order order)
+        {
+            bool result = false;
+            var orderFilePath = @"~/App_Data/orders.json";
+            if (null != order)
+            {
+                //if (!File.Exists(orderFilePath))
+                //    File.Create(orderFilePath);
+                try
+                {
+                    var contents = JsonConvert.SerializeObject(order, Formatting.Indented);
+                    File.WriteAllText(orderFilePath, contents);
+                }
+                catch (Exception ex)
+                {                    
+                    throw;
+                }
+            }
+            return result;
+        }
+
         internal Product Create()
         {
             Product prod = new Product()
@@ -78,7 +99,7 @@ namespace Kks.Service.Models
 
         internal bool WriteData(List<Product> products)
         {
-            var filePath = HostingEnvironment.MapPath(@"~/app/App_Data/items.json");
+            var filePath = HostingEnvironment.MapPath(@"~/App_Data/items.json");
             var contents = JsonConvert.SerializeObject(products, Formatting.Indented);
             File.WriteAllText(filePath, contents);
             return true;

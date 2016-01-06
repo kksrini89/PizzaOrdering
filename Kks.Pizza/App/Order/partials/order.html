@@ -14,7 +14,7 @@
                                id="nameTxt"
                                name="customerName"
                                placeholder="Customer Name"
-                               ng-model="model.customerName"
+                               ng-model="entity.customer.name"
                                required
                                ng-minlength="4"
                                ng-maxlength="12" />
@@ -36,7 +36,7 @@
                                class="form-control"
                                placeholder="Mobile"
                                name="mobileNumber"
-                               ng-model="model.mobileNumber"
+                               ng-model="entity.customer.mobileNumber"
                                ng-minlength="10"
                                ng-maxlength="10"
                                required /><!--ng-pattern="regexMobileNumber"-->
@@ -57,7 +57,7 @@
                                id="addressTxt"
                                placeholder="Address"
                                name="address"
-                               ng-model="model.address"
+                               ng-model="entity.customer.address"
                                required />
                     </div>
                     <span class="help-block has-error" ng-show="CustomerDetailsForm.address.$invalid"></span>
@@ -67,7 +67,7 @@
                         <span style="width:80px;margin-right:10px;">
                             <button class="btn btn-primary"
                                     ng-disabled="CustomerDetailsForm.$invalid"
-                                    ng-click="submit(model)">
+                                    ng-click="submit(entity)">
                                 Submit
                             </button>
                         </span>

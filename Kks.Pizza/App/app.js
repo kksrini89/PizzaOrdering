@@ -2,7 +2,7 @@
     "use strict";
     var app = angular.module('pizzaApp', ['ngResource', 'ui.router', 'ui.bootstrap']);
     app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise('/home');
+        $urlRouterProvider.otherwise('/Home');
         $stateProvider.state('Home', {
             url: '/',
             templateUrl: 'App/MainPage.html'

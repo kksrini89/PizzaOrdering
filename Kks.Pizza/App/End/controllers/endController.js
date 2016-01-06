@@ -5,7 +5,7 @@
         customerEntry = $stateParams.customer;
         var viewmodel = {};
         if (customerEntry != null) {
-            viewmodel.customerName = customerEntry.customerName;
+            viewmodel.customerName = customerEntry.name;
             viewmodel.mobileNumber = customerEntry.mobileNumber;
             viewmodel.address = customerEntry.address;
         }

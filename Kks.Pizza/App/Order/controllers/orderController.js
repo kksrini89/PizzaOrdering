@@ -1,23 +1,43 @@
 ﻿(function () {
     angular.module('pizzaApp')
-    .controller('orderController', ['$scope', '$state', '$stateParams', function ($scope, $state, $stateParams) {
-        var products = [];
-        products = $stateParams.products;
-        var viewmodel = {};
-        viewmodel.customerName = "";
-        viewmodel.mobileNumber = "";
-        viewmodel.address = "";
-        $scope.model = viewmodel;
-        //$scope.customerName = "";
-        //$scope.mobileNumber = "";
-        //$scope.address = "";
-        //$scope.regexMobileNumber = "/^[0-9]{10,10}$/;";
+    .controller('orderController', ['$scope', '$state', '$stateParams', 'orderResource', function ($scope, $state, $stateParams, orderResource) {
+        //var products = [];
+        //products = $stateParams.products;
+        //var viewmodel = {};
+        //viewmodel.customerName = "";
+        //viewmodel.mobileNumber = "";
+        //viewmodel.address = "";
+        //$scope.model = viewmodel;        
+
+        var viewModel = {
+            customer: {
+                name: "",
+                mobileNumber: "",
+                address: ""
+            },
+            products: []
+        };
+        viewModel.products = $stateParams.products;
+        $scope.entity = viewModel;
+
         $scope.cancel = function () {
             $state.go('Menu');
         }
-        $scope.submit = function (customer) {
-            if (customer != null)
-                $state.go('End', { customer: customer });
+        $scope.submit = function (order) {
+            if (order != null) {
+                orderResource.saveItem(order)
+                .$promise.then(function (data) { console.log("Success", data) },
+                function (failure) { console.log("failure", failure) });
+
+                //var itemTobeSaved = orderResource.saveItem({
+                //    order: order
+                //});
+                //itemTobeSaved.$save();
+                $state.go('End', { customer: order.customer });
+                //$scope.entity.$save(function () {
+                //    $state.go('End', { customer: order.customer });
+                //});
+            };
         }
     }]);
 })();

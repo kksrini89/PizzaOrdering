@@ -79,6 +79,7 @@
     <Content Include="App\MainPage.html" />
     <Content Include="App\Order\controllers\orderController.js" />
     <Content Include="App\Order\partials\order.html" />
+    <Content Include="App\Order\services\orderResource.js" />
     <Content Include="App\Products\controllers\productController.js" />
     <Content Include="App\Products\partials\product.html" />
     <Content Include="App\Products\services\productResource.js" />
