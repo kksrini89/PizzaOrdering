@@ -8,8 +8,16 @@
                 var temp = [];
                 $scope.selectedItems = function (item) {
                     if (item != null) {
-                        temp.push(item);
-                        $scope.selectedItemCount++;
+                        if (temp.length == 0) {
+                            temp.push(item);
+                            $scope.selectedItemCount++;
+                        }
+                        else {
+                            if ((temp.indexOf(item)) < 0) {
+                                temp.push(item);
+                                $scope.selectedItemCount++;
+                            }
+                        }
                     }
                 };
                 $scope.OnNextClick = function () {

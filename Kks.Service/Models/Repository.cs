@@ -13,18 +13,18 @@ namespace Kks.Service.Models
         internal bool CreateOrder(Order order)
         {
             bool result = false;
-            var orderFilePath = @"~/App_Data/orders.json";
+            //var orderFilePath = @"~/App_Data/orders.json";
+            var orderFilePath = Path.Combine(HttpRuntime.AppDomainAppPath, "orders.json");
             if (null != order)
             {
-                //if (!File.Exists(orderFilePath))
-                //    File.Create(orderFilePath);
                 try
                 {
                     var contents = JsonConvert.SerializeObject(order, Formatting.Indented);
                     File.WriteAllText(orderFilePath, contents);
+                    result = true;
                 }
                 catch (Exception ex)
-                {                    
+                {
                     throw;
                 }
             }

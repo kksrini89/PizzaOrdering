@@ -28,15 +28,7 @@
                 orderResource.saveItem(order)
                 .$promise.then(function (data) { console.log("Success", data) },
                 function (failure) { console.log("failure", failure) });
-
-                //var itemTobeSaved = orderResource.saveItem({
-                //    order: order
-                //});
-                //itemTobeSaved.$save();
                 $state.go('End', { customer: order.customer });
-                //$scope.entity.$save(function () {
-                //    $state.go('End', { customer: order.customer });
-                //});
             };
         }
     }]);
