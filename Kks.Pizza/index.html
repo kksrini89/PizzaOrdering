@@ -5,9 +5,12 @@
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/bootstrap-theme.css" rel="stylesheet" />
     <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
+    <link href="Content/toastr.css" rel="stylesheet" />
     <link href="Content/custom.css" rel="stylesheet" />
     <script src="Scripts/jquery-2.1.4.js"></script>
     <script src="Scripts/bootstrap.js"></script>
+    <!-- jQuery dependency to use toastr javascript library -->
+    <script src="Scripts/toastr.js"></script>
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-ui-router.js"></script>
     <script src="Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
@@ -17,7 +20,7 @@
     <script src="App/Products/services/productResource.js"></script>
     <script src="App/Order/controllers/orderController.js"></script>
     <script src="App/Order/services/orderResource.js"></script>
-    <script src="App/End/controllers/endController.js"></script>    
+    <script src="App/End/controllers/endController.js"></script>
 </head>
 <body>
     <div class="container">
@@ -40,7 +43,7 @@
                         <ul class="nav navbar-nav">
                             <li><a data-ui-sref="Menu"><u>M</u>enu</a></li>
                             <li><a data-ui-sref="CustomerDetails"><u>C</u>ustomer Details</a></li>
-                            <li><a ><u>E</u>nd</a></li>
+                            <li><a><u>E</u>nd</a></li>
                             <!--<li><a><i class="glyphicon glyphicon-plus"></i>Add Product</a></li>-->
                         </ul>
                     </div>
@@ -49,6 +52,6 @@
         </div>
     </div>
 
-    <div data-ui-view=""></div>  
+    <div data-ui-view=""></div>
 </body>
 </html>
