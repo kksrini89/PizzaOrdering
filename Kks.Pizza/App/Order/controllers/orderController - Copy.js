@@ -1,6 +1,14 @@
 ﻿(function () {
     angular.module('pizzaApp')
     .controller('orderController', ['$scope', '$state', '$stateParams', 'orderResource', function ($scope, $state, $stateParams, orderResource) {
+        //var products = [];
+        //products = $stateParams.products;
+        //var viewmodel = {};
+        //viewmodel.customerName = "";
+        //viewmodel.mobileNumber = "";
+        //viewmodel.address = "";
+        //$scope.model = viewmodel;        
+
         var viewModel = {
             customer: {
                 name: "",
@@ -19,7 +27,7 @@
             if (order != null) {
                 orderResource.saveItem(order)
                 .$promise.then(function (data) {
-                    //console.log("Success", data);
+                    console.log("Success", data);
                     if (data.products.length > 1) {
                         toastr.success('Your orders are placed');
                     }
@@ -36,8 +44,8 @@
                         "onclick": null,
                         "showDuration": "300",
                         "hideDuration": "1000",
-                        "timeOut": "3000",
-                        "extendedTimeOut": "4000",
+                        "timeOut": "1000",
+                        "extendedTimeOut": "2000",
                         //for animation
                         "showEasing": "swing",
                         "hideEasing": "linear",
@@ -47,10 +55,7 @@
                     }
                     $state.go('End', { customer: order.customer });
                 },
-                function (failure) {
-                    //console.log("failure", failure);
-                    toastr.error("Try after sometime. Sorry for the inconvenience");
-                });
+                function (failure) { console.log("failure", failure) });
             };
         }
     }]);
