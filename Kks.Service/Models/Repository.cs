@@ -10,6 +10,9 @@ namespace Kks.Service.Models
 {
     public class Repository
     {
+        #region Order
+
+        #region CreateOrder
         internal bool CreateOrder(Order order)
         {
             bool result = false;
@@ -30,7 +33,22 @@ namespace Kks.Service.Models
             }
             return result;
         }
+        #endregion
 
+        #region GetOrders
+        internal List<Order> GetOrders()
+        {
+            string path = HttpContext.Current.Request.MapPath("~\\orders.json");
+            var contents = string.Empty;
+            if (string.IsNullOrEmpty(path) && File.Exists(path))
+                contents = File.ReadAllText(path);
+            return JsonConvert.DeserializeObject<List<Order>>(contents);
+        }
+        #endregion
+
+        #endregion
+
+        #region Product
         internal Product Create()
         {
             Product prod = new Product()
@@ -104,5 +122,6 @@ namespace Kks.Service.Models
             File.WriteAllText(filePath, contents);
             return true;
         }
+        #endregion
     }
 }

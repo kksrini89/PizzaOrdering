@@ -17,6 +17,14 @@
         }
         $scope.submit = function (order) {
             if (order != null) {
+                //var currentdate = new Date();
+                //var datetime = currentdate.getDate() + "/"
+                //                + (currentdate.getMonth() + 1) + "/"
+                //                + currentdate.getFullYear() + " @ "
+                //                + currentdate.getHours() + ":"
+                //                + currentdate.getMinutes() + ":"
+                //                + currentdate.getSeconds();
+                order.orderedDate = new Date();
                 orderResource.saveItem(order)
                 .$promise.then(function (data) {
                     //console.log("Success", data);
@@ -45,7 +53,7 @@
                         "showMethod": "fadeIn",
                         "hideMethod": "fadeOut"
                     }
-                    $state.go('End', { customer: order.customer });
+                    $state.go('End', { customer: order.customer, orderedDate: order.orderedDate });
                 },
                 function (failure) {
                     //console.log("failure", failure);

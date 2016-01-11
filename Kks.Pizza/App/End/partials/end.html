@@ -3,4 +3,25 @@
         <h2 style="font-family:'Comic Sans MS';font-size:medium">Thank you {{model.customerName}}</h2>
         <span style="font-family:'Times New Roman';font-size:medium"> order will reach you within an hour.</span>
     </div>
+    <div class="row">
+        <div>
+            <table class="table table-hover table-responsive">
+                <tr>
+                    <th>Ordered Date</th>
+                    <th>Customer Name</th>
+                    <th>Mobile Number</th>
+                    <th>Address</th>
+                </tr>
+                <tr>
+                    <td>
+                        {{model.orderedDate|date:'dd-MM-yyyy HH:mm:ss'}}
+                        <!--<a class="btn btn-primary" ng-click=""></a>-->
+                    </td>
+                    <td>{{model.customerName}}</td>
+                    <td>{{model.mobileNumber}}</td>
+                    <td>{{model.address}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </div>

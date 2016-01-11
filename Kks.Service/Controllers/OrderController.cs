@@ -13,9 +13,9 @@ namespace Kks.Service.Controllers
     public class OrderController : ApiController
     {
         // GET api/order
-        public IEnumerable<string> Get()
+        public IEnumerable<Order> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new Repository().GetOrders();
         }
 
         // GET api/order/5

@@ -5,7 +5,8 @@
         $urlRouterProvider.otherwise('/');
         $stateProvider.state('Home', {
             url: '/',
-            templateUrl: 'App/MainPage.html'
+            templateUrl: 'App/MainPage.html',
+            controller: 'mainController'            
         })
         .state('Menu', {
             url: '/menu',
@@ -25,8 +26,10 @@
         .state('End', {
             url: '/end',
             params: {
-                customer: null
+                customer: null,
+                orderedDate: null
             },
+
             templateUrl: 'App/End/partials/end.html',
             controller: 'endController'
         });
