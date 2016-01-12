@@ -5,8 +5,7 @@
         $urlRouterProvider.otherwise('/');
         $stateProvider.state('Home', {
             url: '/',
-            templateUrl: 'App/MainPage.html',
-            controller: 'mainController'            
+            templateUrl: 'App/MainPage.html'
         })
         .state('Menu', {
             url: '/menu',
@@ -32,6 +31,18 @@
 
             templateUrl: 'App/End/partials/end.html',
             controller: 'endController'
+        })
+        .state('OrderDetails', {
+            url: '/orderDetails',
+            templateUrl: 'App/Order/partials/orderDetails.html',
+            controller: 'orderDetailsController',
+            resolve: {
+                orderedItems: function (orderResource) {
+                    var order = {};
+                    orderResource.getOrders().$promise.then(function (data){ order = data }, function (error) { console.log(error) });
+                    return order;
+                }
+            }
         });
     }]);
 

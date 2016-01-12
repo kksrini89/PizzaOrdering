@@ -76,12 +76,11 @@
   <ItemGroup>
     <Content Include="App\End\controllers\endController.js" />
     <Content Include="App\End\partials\end.html" />
-    <Content Include="App\mainController.js" />
     <Content Include="App\MainPage.html" />
-    <Content Include="App\mainService.js" />
     <Content Include="App\Order\controllers\orderController.js" />
+    <Content Include="App\Order\controllers\orderDetailsController.js" />
     <Content Include="App\Order\partials\order.html" />
-    <Content Include="App\Order\partials\OrderEdit.html" />
+    <Content Include="App\Order\partials\orderDetails.html" />
     <Content Include="App\Order\services\orderResource.js" />
     <Content Include="App\Products\controllers\productController.js" />
     <Content Include="App\Products\partials\product.html" />

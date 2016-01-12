@@ -40,10 +40,21 @@ namespace Kks.Service.Models
         {
             string path = HttpContext.Current.Request.MapPath("~\\orders.json");
             var contents = string.Empty;
-            if (string.IsNullOrEmpty(path) && File.Exists(path))
+            if (!string.IsNullOrEmpty(path) && File.Exists(path))
                 contents = File.ReadAllText(path);
             return JsonConvert.DeserializeObject<List<Order>>(contents);
         }
+        #endregion
+
+        #region GetOrder
+        internal Order GetOrder(int id)
+        {
+            string path = HttpContext.Current.Request.MapPath("~\\orders.json");
+            var contents = string.Empty;
+            if (!string.IsNullOrEmpty(path) && File.Exists(path))
+                contents = File.ReadAllText(path);
+            return JsonConvert.DeserializeObject<Order>(contents);
+        } 
         #endregion
 
         #endregion

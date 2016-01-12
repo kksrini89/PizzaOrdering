@@ -19,9 +19,9 @@ namespace Kks.Service.Controllers
         }
 
         // GET api/order/5
-        public string Get(int id)
+        public Order Get(int id)
         {
-            return "value";
+            return new Repository().GetOrder(id);
         }
 
         // POST api/order
