@@ -12,6 +12,7 @@ namespace Kks.Service.Models
             Products = new List<Product>();
             Customer = new Customer();
         }
+
         public DateTime OrderedDate { get; set; }
         public Customer Customer { get; set; }
         public List<Product> Products { get; set; }

@@ -4,7 +4,7 @@
             var resource = $resource(appSettings.serverPath + "/api/order/:id", null);
             return {
                 getOrders: function () {
-                    return $resource(appSettings.serverPath + "/api/order/1").get();
+                    return resource.get({ id: 1 }).$promise;
                 },
                 saveItem: function (item) {
                     return resource.save(item);

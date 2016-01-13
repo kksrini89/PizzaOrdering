@@ -37,10 +37,9 @@
             templateUrl: 'App/Order/partials/orderDetails.html',
             controller: 'orderDetailsController',
             resolve: {
+                orderResource: "orderResource",
                 orderedItems: function (orderResource) {
-                    var order = {};
-                    orderResource.getOrders().$promise.then(function (data){ order = data }, function (error) { console.log(error) });
-                    return order;
+                    return orderResource.getOrders();
                 }
             }
         });
