@@ -3,6 +3,31 @@
         <form class="form-horizontal" name="CustomerDetailsForm" novalidate>
             <fieldset>
                 <legend>Order Form</legend>
+                <table st-table="entity.products" ng-if="entity.products.length>0" class="table table-bordered table-striped table-responsive table-hover">
+                    <thead>
+                        <tr>
+                            <td>Name</td>
+                            <td>Price</td>
+                            <td>Quantity</td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in entity.products">
+                            <td>{{item.productName}}</td>
+                            <td>{{item.price}}</td>
+                            <td>
+                                <input class="form-control" style="width:40px;text-align:center;" type="text" ng-model="item.quantity" placeholder="Quantity" />
+                            </td>
+                            <td>
+                                <button type="button" ng-click="remove($index)" class="btn btn-danger">
+                                    <i class="glyphicon glyphicon-remove-circle"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
                 <div class="form-group"
                      ng-class="{'has-error':CustomerDetailsForm.customerName.$invalid &&
                                             CustomerDetailsForm.customerName.$dirty}">

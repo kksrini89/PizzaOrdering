@@ -1,9 +1,14 @@
 ﻿(function () {
     'use strict';
     angular.module('pizzaApp')
-            .controller('productController', ['$scope', 'productResource', '$state', function ($scope, productResource, $state) {
+            .controller('menuController', ['$scope', 'products', '$state', function ($scope, products, $state) {
                 $scope.products = [];
-                $scope.products = productResource.getProducts();
+                if (null != products) {
+                    //console.log(products);
+                    $scope.products = products;
+                }
+                else
+                    console.error("Products Data is empty.");
                 $scope.selectedItemCount = 0;
                 var temp = [];
                 $scope.selectedItems = function (item) {
@@ -60,7 +65,7 @@
 
                 $scope.OnNextClick = function () {
                     if (angular.isDefined(temp) && temp.length > 0 && $scope.selectedItemCount > 0)
-                        $state.go('CustomerDetails', { products: temp });
+                        $state.go('OrderEntry', { products: temp });
                 };
 
                 //productResource.query(function (data) {

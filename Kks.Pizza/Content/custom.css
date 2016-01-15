@@ -23,3 +23,26 @@ form {
         line-height: 1;
         text-shadow: 0 3px 0 rgba(0,0,0,0.1);
     }
+
+/*.quantity {
+    width: 40px;
+}*/
+
+.table {
+    margin-left: 25px;
+    text-align: center;
+    width: 90%;
+    border: 2px solid #34495E;
+}
+
+th {
+    text-align: center;
+}
+
+.table-bordered > tbody > tr > td {
+    border: 2px solid #34495E;
+}
+
+.table-bordered > thead > tr > td {
+    border: 2px solid #34495E;
+}

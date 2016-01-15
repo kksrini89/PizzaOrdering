@@ -5,7 +5,8 @@
     "ProductId": 1,
     "ProductName": "Leaf Rake",
 	"ImageUrl":"http://images8.alphacoders.com/369/369063.jpg",
-    "ReleaseDate": "2009-03-19T00:00:00-07:00"
+    "ReleaseDate": "2009-03-19T00:00:00-07:00",
+	"Quantity":1
   },
   {
     "Description": "Pepper and Salt",
@@ -13,7 +14,8 @@
     "ProductId": 2,
     "ProductName": "Garden Cart",
 	"ImageUrl":"http://wallpapersdsc.net/wp-content/uploads/2015/11/Pizza_Images12.jpg",
-    "ReleaseDate": "2010-03-18T00:00:00-07:00"
+    "ReleaseDate": "2010-03-18T00:00:00-07:00",
+	"Quantity":1
   },
   {
     "Description": "Party One",
@@ -21,7 +23,8 @@
     "ProductId": 3,
     "ProductName": "paneer",
 	"ImageUrl":"https://masterchan.org/media/images/918044.jpg",
-    "ReleaseDate": "2012-03-18T00:00:00-07:00"
+    "ReleaseDate": "2012-03-18T00:00:00-07:00",
+	"Quantity":1
   },
   {
     "Description": "Sweet one",
@@ -29,7 +32,8 @@
     "ProductId": 4,
     "ProductName": "Hand Trowel",
 	"ImageUrl":"http://images.all-free-download.com/images/graphiclarge/pizza_picture_4_167126.jpg",
-    "ReleaseDate": "2013-03-22T00:00:00-07:00"
+    "ReleaseDate": "2013-03-22T00:00:00-07:00",
+	"Quantity":1
   },
   {
     "Description": "Curved Shape",
@@ -37,7 +41,8 @@
     "ProductId": 5,
     "ProductName": "Hammer",
 	"ImageUrl":"https://b.zmtcdn.com/data/pictures/chains/3/143/5cf123bb1d92163e8c393b91f6d7182b.jpg",
-    "ReleaseDate": "2013-05-21T00:00:00-07:00"
+    "ReleaseDate": "2013-05-21T00:00:00-07:00",
+	"Quantity":1
   },
   {
     "Description": "Couple Taste",
@@ -45,7 +50,8 @@
     "ProductId": 6,
     "ProductName": "Wrench",
 	"ImageUrl":"http://cdn2.hubspot.net/hub/241596/file-307521492-png/images/dominos_pizza_pie.png",
-    "ReleaseDate": "2013-05-15T00:00:00-07:00"
+    "ReleaseDate": "2013-05-15T00:00:00-07:00",
+	"Quantity":1
   },
   {
     "Description": "Bachelor Style",
@@ -53,7 +59,8 @@
     "ProductId": 7,
     "ProductName": "Push Mower",
 	"ImageUrl":"https://masterchan.org/media/images/918044.jpg",
-    "ReleaseDate": "2008-05-01T00:00:00-07:00"
+    "ReleaseDate": "2008-05-01T00:00:00-07:00",
+	"Quantity":1
   },
   {
     "Description": "Single",
@@ -61,7 +68,8 @@
     "ProductId": 8,
     "ProductName": "Saw",
 	"ImageUrl":"http://cdn2.hubspot.net/hub/241596/file-307521492-png/images/dominos_pizza_pie.png",
-    "ReleaseDate": "2009-05-15T00:00:00-07:00"
+    "ReleaseDate": "2009-05-15T00:00:00-07:00",
+	"Quantity":1
   },
   {
     "Description": "Double Non-Veg",
@@ -69,7 +77,8 @@
     "ProductId": 9,
     "ProductName": "Pipe Wrench",
 	"ImageUrl":"http://images8.alphacoders.com/369/369063.jpg",
-    "ReleaseDate": "2009-06-15T00:00:00-07:00"
+    "ReleaseDate": "2009-06-15T00:00:00-07:00",
+	"Quantity":1
   },
   {
     "Description": "Single Veg Style",
@@ -77,7 +86,8 @@
     "ProductId": 10,
     "ProductName": "Veg butter",
 	"ImageUrl":"https://b.zmtcdn.com/data/pictures/chains/3/143/5cf123bb1d92163e8c393b91f6d7182b.jpg",
-    "ReleaseDate": "2002-10-15T00:00:00-07:00"
+    "ReleaseDate": "2002-10-15T00:00:00-07:00",
+	"Quantity":1
   },
   {
     "Description": "Everyone wants one!",
@@ -85,6 +95,7 @@
     "ProductId": 11,
     "ProductName": "smash",
 	"ImageUrl":"http://wallpapersdsc.net/wp-content/uploads/2015/11/Pizza_Images12.jpg",
-    "ReleaseDate": "2015-03-10T16:55:08.535279-07:00"
+    "ReleaseDate": "2015-03-10T16:55:08.535279-07:00",
+	"Quantity":1
   }
 ]

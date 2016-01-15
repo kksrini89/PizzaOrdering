@@ -9,11 +9,17 @@
         })
         .state('Menu', {
             url: '/menu',
-            templateUrl: 'App/Products/partials/product.html',
-            controller: 'productController'
+            templateUrl: 'App/Menu/partials/menu.html',
+            controller: 'menuController',
+            resolve: {
+                productResource: "productResource",
+                products: function (productResource) {
+                    return productResource.getProducts();
+                }
+            }
         })
-        .state('CustomerDetails', {
-            url: '/customerdetails',
+        .state('OrderEntry', {
+            url: '/orderentry',
             params: {
                 products: {
                     array: true,

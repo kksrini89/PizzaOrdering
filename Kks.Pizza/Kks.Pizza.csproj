@@ -78,13 +78,11 @@
     <Content Include="App\End\partials\end.html" />
     <Content Include="App\MainPage.html" />
     <Content Include="App\Order\controllers\orderController.js" />
-    <Content Include="App\Order\controllers\orderDetailsController.js" />
     <Content Include="App\Order\partials\order.html" />
-    <Content Include="App\Order\partials\orderDetails.html" />
     <Content Include="App\Order\services\orderResource.js" />
-    <Content Include="App\Products\controllers\productController.js" />
-    <Content Include="App\Products\partials\product.html" />
-    <Content Include="App\Products\services\productResource.js" />
+    <Content Include="App\Menu\controllers\menuController.js" />
+    <Content Include="App\Menu\partials\menu.html" />
+    <Content Include="App\Menu\services\productResource.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -126,6 +124,8 @@
     <Content Include="App\app.js" />
     <Content Include="index.html" />
     <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\smart-table.js" />
+    <Content Include="Scripts\smart-table.min.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
     <Content Include="Web.config" />

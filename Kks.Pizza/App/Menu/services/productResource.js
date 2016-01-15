@@ -6,9 +6,10 @@
     //    }]);
     angular.module('pizzaApp')
        .factory('productResource', ['$resource', 'appSettings', function ($resource, appSettings) {
+           var resource = $resource(appSettings.serverPath + '/api/Products/:id', null);
            return {
                getProducts: function () {
-                   return $resource(appSettings.serverPath + '/api/Products/:id', null).query();
+                   return resource.query();
                }
            };
        }]);

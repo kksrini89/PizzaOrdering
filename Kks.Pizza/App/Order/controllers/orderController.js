@@ -12,6 +12,10 @@
         viewModel.products = $stateParams.products;
         $scope.entity = viewModel;
 
+        $scope.remove = function (itemIndexTobeRemoved) {
+            $scope.entity.products.splice(itemIndexTobeRemoved, 1);            
+        }
+
         $scope.cancel = function () {
             $state.go('Menu');
         }

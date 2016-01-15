@@ -4,24 +4,24 @@
         <span style="font-family:'Times New Roman';font-size:medium"> order will reach you within an hour.</span>
     </div>
     <div class="row">
-        <div>
-            <table class="table table-hover table-responsive">
+        <table class="table table-hover table-striped table-bordered table-responsive" style="width:90%;text-align:center;margin-left:25px;border:2px solid #34495E">
+            <thead>
                 <tr>
                     <th>Ordered Date</th>
                     <th>Customer Name</th>
                     <th>Mobile Number</th>
                     <th>Address</th>
                 </tr>
+            </thead>
+            <tbody>
                 <tr>
-                    <td>
-                        {{model.orderedDate|date:'dd-MM-yyyy HH:mm:ss'}}
-                        <!--<a class="btn btn-primary" ng-click=""></a>-->
-                    </td>
+                    <td>{{model.orderedDate|date:'dd-MM-yyyy HH:mm:ss'}}</td>
                     <td>{{model.customerName}}</td>
                     <td>{{model.mobileNumber}}</td>
                     <td>{{model.address}}</td>
                 </tr>
-            </table>
-        </div>
+            </tbody>
+        </table>
     </div>
+
 </div>
