@@ -41,22 +41,30 @@
                         </button>
                     </div>
                     <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
+                        <ul class="nav navbar-nav pull-right">
                             <li><a data-ui-sref="Menu"><u>M</u>enu</a></li>
                             <!-- data-ui-sref="CustomerDetails" -->
                             <li><a><u>O</u>rder</a></li>
                             <li><a><u>E</u>nd</a></li>
+                            <li>
+                                <a class="dropdown-toggle glyphicon glyphicon-log-in" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Settings</a></li>
+                                    <li><a href="#">Login</a></li>
+                                </ul>
+                            </li>
                             <!--<li><a><i class="glyphicon glyphicon-plus"></i>Add Product</a></li>-->
                         </ul>
                     </div>
-                    <!--<div class="navbar-collapse collapse">
-                        <ul>
-                            <li>
-                                <a class="btn btn-primary pull-right"
-                                   data-ui-sref="OrderDetails">Orders</a>
-                            </li>
-                        </ul>
-                    </div>-->
+                </div>
+                <!--<div class="navbar-collapse collapse">
+                    <ul>
+                        <li>
+                            <a class="btn btn-primary pull-right"
+                               data-ui-sref="OrderDetails">Orders</a>
+                        </li>
+                    </ul>
+                </div>-->
             </nav>
         </div>
     </div>

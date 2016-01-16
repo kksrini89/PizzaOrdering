@@ -6,6 +6,11 @@ a {
     cursor: pointer;
 }
 
+.navbar .nav.pull-right {
+     float: right;
+    margin-right: 98px; /*set margin this way in your custom styesheet*/
+  }
+
 form {
     background-color: #A4C8E8;
     border-radius: 2px;
