@@ -3,6 +3,13 @@
     var app = angular.module('pizzaApp', ['ngResource', 'ui.router', 'ui.bootstrap']);
     app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
+
+        $stateProvider.state('Login', {
+            url: '/login',
+            templateUrl: 'App/Login/partials/login.html',
+            controller: 'loginController'
+        })
+
         $stateProvider.state('Home', {
             url: '/',
             templateUrl: 'App/MainPage.html'

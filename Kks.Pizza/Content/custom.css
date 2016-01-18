@@ -7,9 +7,9 @@ a {
 }
 
 .navbar .nav.pull-right {
-     float: right;
+    float: right;
     margin-right: 98px; /*set margin this way in your custom styesheet*/
-  }
+}
 
 form {
     background-color: #A4C8E8;
@@ -50,4 +50,8 @@ th {
 
 .table-bordered > thead > tr > td {
     border: 2px solid #34495E;
+}
+
+.loginForm {
+    border-color: AppWorkspace;
 }
