@@ -14,8 +14,8 @@
                 <span class="help-block has-error" ng-show="loginForm.password.$invalid && loginForm.password.$dirty">Password is required</span>
             </div>
             <div class="form-group">
-                <button type="button" class="btn btn-primary" ng-disabled="loginForm.$invalid" ng-click="entity.OnSubmit()">Submit</button>
-                <button type="button" class="btn btn-danger" ng-click="entity.OnCancel()">Cancel</button>
+                <button type="button" class="btn btn-primary" ng-disabled="loginForm.$invalid" ng-click="entity.onSubmit()">Submit</button>
+                <button type="button" class="btn btn-danger" ng-click="entity.onCancel()">Cancel</button>
             </div>
         </form>
     </div>

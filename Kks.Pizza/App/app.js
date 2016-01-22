@@ -58,6 +58,19 @@
         });
     }]);
 
+    app.run(['$rootScope', '$location', '$state', '$stateParams', function ($rootScope, $location, $state, $stateParams) {
+        console.log("app run")
+        $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {          
+            $rootScope.prevState = fromState;
+            $rootScope.currentState = toState;            
+            console.log('should be loading:' + toState + " - " + fromState);
+        });
+
+        $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {            
+            
+        });
+    }]);
+
     app.constant('appSettings', {
         serverPath: "http://localhost:29208"
     });
