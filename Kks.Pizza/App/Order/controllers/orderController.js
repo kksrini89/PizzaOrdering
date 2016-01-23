@@ -1,19 +1,22 @@
 ﻿(function () {
     angular.module('pizzaApp')
-    .controller('orderController', ['$scope', '$state', '$stateParams', 'orderResource', function ($scope, $state, $stateParams, orderResource) {
-        var viewModel = {
-            customer: {
-                name: "",
-                mobileNumber: "",
-                address: ""
-            },
-            products: []
-        };
-        viewModel.products = $stateParams.products;
+    .controller('orderController', ['$scope', '$state', '$stateParams', 'orderResource', 'orderService', function ($scope, $state, $stateParams, orderResource, orderService) {
+        //var viewModel = {
+        //    customer: {
+        //        name: "",
+        //        mobileNumber: "",
+        //        address: ""
+        //    },
+        //    products: []
+        //};
+        //viewModel.products = $stateParams.products;
+
+        if (null != orderService)
+            viewModel = orderService;
         $scope.entity = viewModel;
 
         $scope.remove = function (itemIndexTobeRemoved) {
-            $scope.entity.products.splice(itemIndexTobeRemoved, 1);            
+            $scope.entity.products.splice(itemIndexTobeRemoved, 1);
         }
 
         $scope.cancel = function () {
@@ -28,14 +31,14 @@
                 //                + currentdate.getHours() + ":"
                 //                + currentdate.getMinutes() + ":"
                 //                + currentdate.getSeconds();
-                order.orderedDate = new Date();
+                order.orderedDate = orderService.orderedDate = new Date();
                 orderResource.saveItem(order)
                 .$promise.then(function (data) {
                     //console.log("Success", data);
-                    if (data.products.length > 1) {
+                    if (data.selectedPizzas.length > 1) {
                         toastr.success('Your orders are placed');
                     }
-                    else if (data.products.length == 1)
+                    else if (data.selectedPizzas.length == 1)
                         toastr.success('Your order is placed');
 
                     toastr.options = {
@@ -57,7 +60,8 @@
                         "showMethod": "fadeIn",
                         "hideMethod": "fadeOut"
                     }
-                    $state.go('End', { customer: order.customer, orderedDate: order.orderedDate });
+                    //$state.go('End', { customer: order.customer, orderedDate: order.orderedDate });
+                    $state.go('End');
                 },
                 function (failure) {
                     //console.log("failure", failure);

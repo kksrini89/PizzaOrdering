@@ -27,20 +27,20 @@
         })
         .state('OrderEntry', {
             url: '/orderentry',
-            params: {
-                products: {
-                    array: true,
-                }
-            },
+            //params: {
+            //    products: {
+            //        array: true,
+            //    }
+            //},
             templateUrl: 'App/Order/partials/order.html',
             controller: 'orderController'
         })
         .state('End', {
             url: '/end',
-            params: {
-                customer: null,
-                orderedDate: null
-            },
+            //params: {
+            //    customer: null,
+            //    orderedDate: null
+            //},
 
             templateUrl: 'App/End/partials/end.html',
             controller: 'endController'
@@ -60,15 +60,34 @@
 
     app.run(['$rootScope', '$location', '$state', '$stateParams', function ($rootScope, $location, $state, $stateParams) {
         console.log("app run")
-        $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {          
-            $rootScope.prevState = fromState;
-            $rootScope.currentState = toState;            
-            console.log('should be loading:' + toState + " - " + fromState);
+
+        $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+            if (toState.name === 'Menu' || toState.name === 'OrderEntry') {
+                //if (sessionStorage.restorestate == "true") {
+                    $rootScope.$broadcast('restorestate'); //let everything know we need to restore state
+                    //sessionStorage.restorestate = false;
+                //}
+            }
+            console.log('State Change Start From: ' + fromState.name + ' To ' + toState.name);
+        });
+        window.onbeforeunload = function (event) {
+            $rootScope.$broadcast('savestate');
+            console.log('window.onbeforeunload method fired');
+        };
+
+        $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+
         });
 
-        $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {            
-            
-        });
+        //$rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {          
+        //    $rootScope.prevState = fromState;
+        //    $rootScope.currentState = toState;            
+        //    console.log('should be loading:' + toState + " - " + fromState);
+        //});
+
+        //$rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {            
+
+        //});
     }]);
 
     app.constant('appSettings', {

@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
     angular.module('pizzaApp')
-            .controller('menuController', ['$scope', 'products', '$state', function ($scope, products, $state) {
+            .controller('menuController', ['$scope', 'products', '$state', 'orderService', function ($scope, products, $state, orderService) {
                 $scope.products = [];
                 if (null != products) {
                     //console.log(products);
@@ -9,8 +9,15 @@
                 }
                 else
                     console.error("Products Data is empty.");
-                $scope.selectedItemCount = 0;
+
                 var temp = [];
+                if (orderService != null) {
+                    var selectedPizzaCount = orderService.selectedPizzas.length;
+                    temp = orderService.selectedPizzas;
+                }
+                //$scope.selectedItemCount = 0;
+                $scope.selectedItemCount = selectedPizzaCount;
+
                 $scope.selectedItems = function (item) {
                     if (item != null) {
                         if (temp !== undefined) {
@@ -65,7 +72,8 @@
 
                 $scope.OnNextClick = function () {
                     if (angular.isDefined(temp) && temp.length > 0 && $scope.selectedItemCount > 0)
-                        $state.go('OrderEntry', { products: temp });
+                        //$state.go('OrderEntry', { products: temp });
+                        $state.go('OrderEntry');
                 };
 
                 //productResource.query(function (data) {

@@ -85,6 +85,7 @@
     <Content Include="App\Menu\controllers\menuController.js" />
     <Content Include="App\Menu\partials\menu.html" />
     <Content Include="App\Menu\services\productResource.js" />
+    <Content Include="App\Order\services\orderService.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />

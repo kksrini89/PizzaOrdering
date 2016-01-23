@@ -14,18 +14,10 @@
                    onCancel: function () {
                        var prevState = $rootScope.prevState;
                        var currentState = $rootScope.currentState;
-
                        //Get the Previous ui route state to navigate.
                        $state.go(prevState.name);
                    }
-               };
-
-               //viewModel.OnSubmit = function () {
-
-               //};
-               //viewModel.OnCancel = function () {
-
-               //};
+               };              
                $scope.entity = viewModel;
            }]);
 })();

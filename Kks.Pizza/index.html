@@ -22,6 +22,7 @@
     <script src="App/Order/services/orderResource.js"></script>
     <script src="App/End/controllers/endController.js"></script>
     <script src="App/Login/controllers/loginController.js"></script>
+    <script src="App/Order/services/orderService.js"></script>
     <!--<script src="App/Order/controllers/orderDetailsController.js"></script>-->
 </head>
 <body>
@@ -29,7 +30,7 @@
         <div class="row">
             <nav class="navbar navbar-inverse">
                 <div class="container">
-                    <a data-ui-sref="Home" class="navbar navbar-brand">Kks Pizza</a>
+                    <a data-ui-sref="Home" class="navbar navbar-brand"><span class="glyphicon glyphicon-shopping-cart"></span>Kks Pizza</a>
                     <div class="navbar-header">
                         <button type="button"
                                 class="navbar-toggle"
@@ -43,7 +44,7 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav pull-right">
-                            <li><a data-ui-sref="Menu"><u>M</u>enu</a></li>
+                            <li><a data-ui-sref="Menu" class="nav"><span class="glyphicon glyphicon-menu-hamburger"></span>Menu</a></li>
                             <!-- data-ui-sref="CustomerDetails" -->
                             <li><a><u>O</u>rder</a></li>
                             <li><a><u>E</u>nd</a></li>
@@ -71,5 +72,6 @@
     </div>
 
     <div data-ui-view=""></div>
+    <script type="text/javascript" src="/_vwd/js/artery"></script>
 </body>
 </html>
