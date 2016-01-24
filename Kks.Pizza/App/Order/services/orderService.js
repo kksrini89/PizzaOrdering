@@ -9,7 +9,7 @@
                        address: ""
                    },
                    selectedPizzas: [],
-                   orderedDate: null                  
+                   //orderedDate: null                  
                };
 
                function SaveState() {

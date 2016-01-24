@@ -31,7 +31,8 @@
                 //                + currentdate.getHours() + ":"
                 //                + currentdate.getMinutes() + ":"
                 //                + currentdate.getSeconds();
-                order.orderedDate = orderService.orderedDate = new Date();
+                //order.orderedDate = orderService.orderedDate = new Date();
+                order.orderedDate = new Date();
                 orderResource.saveItem(order)
                 .$promise.then(function (data) {
                     //console.log("Success", data);
@@ -60,8 +61,8 @@
                         "showMethod": "fadeIn",
                         "hideMethod": "fadeOut"
                     }
-                    //$state.go('End', { customer: order.customer, orderedDate: order.orderedDate });
-                    $state.go('End');
+                    $state.go('End', { customer: order.customer, orderedDate: order.orderedDate });
+                    //$state.go('End');
                 },
                 function (failure) {
                     //console.log("failure", failure);

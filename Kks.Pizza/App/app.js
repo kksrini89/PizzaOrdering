@@ -37,11 +37,10 @@
         })
         .state('End', {
             url: '/end',
-            //params: {
-            //    customer: null,
-            //    orderedDate: null
-            //},
-
+            params: {
+                customer: null,
+                orderedDate: null
+            },
             templateUrl: 'App/End/partials/end.html',
             controller: 'endController'
         })
@@ -59,7 +58,7 @@
     }]);
 
     app.run(['$rootScope', '$location', '$state', '$stateParams', function ($rootScope, $location, $state, $stateParams) {
-        console.log("app run")
+        console.log("app run");
 
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
             if (toState.name === 'Menu' || toState.name === 'OrderEntry') {
