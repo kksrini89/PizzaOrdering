@@ -16,7 +16,7 @@
         $scope.entity = viewModel;
 
         $scope.remove = function (itemIndexTobeRemoved) {
-            $scope.entity.products.splice(itemIndexTobeRemoved, 1);
+            $scope.entity.selectedPizzas.splice(itemIndexTobeRemoved, 1);
         }
 
         $scope.cancel = function () {

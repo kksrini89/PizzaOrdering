@@ -13,15 +13,15 @@
                };
 
                function SaveState() {
-                   sessionStorage.customerDetail = angular.toJson(orderModel.customer);
+                   sessionStorage.setItem("customerDetail", angular.toJson(orderModel.customer));
                    console.log(sessionStorage.customerDetail);
-                   sessionStorage.selectedPizzas = angular.toJson(orderModel.selectedPizzas);
+                   sessionStorage.setItem("selectedPizzas", angular.toJson(orderModel.selectedPizzas));
                    console.log(sessionStorage.selectedPizzas);
                }
                function RestoreState() {
-                   orderModel.customer = angular.fromJson(sessionStorage.customerDetail);
+                   orderModel.customer = angular.fromJson(sessionStorage.getItem("customerDetail"));
                    console.log(orderModel.customer);
-                   orderModel.selectedPizzas = angular.fromJson(sessionStorage.selectedPizzas);
+                   orderModel.selectedPizzas = angular.fromJson(sessionStorage.getItem("selectedPizzas"));
                    console.log(orderModel.selectedPizzas);
                }
 
