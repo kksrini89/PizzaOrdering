@@ -63,16 +63,16 @@
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
             $rootScope.prevState = fromState;
             $rootScope.currentState = toState;
-            if (toState.name === 'Menu' || toState.name === 'OrderEntry') {
-                //if (sessionStorage.restorestate == "true") {
-                $rootScope.$broadcast('restorestate'); //let everything know we need to restore state
-                //sessionStorage.restorestate = false;
-                //}
+            //if (toState.name === 'Menu' || toState.name === 'OrderEntry') {
+            if (sessionStorage.restorestate == "true") {
+                $rootScope.$broadcast('restoreState'); //let everything know we need to restore state
+                sessionStorage.restorestate = false;
             }
+            //}
             console.log('State Change Start From: ' + fromState.name + ' To ' + toState.name);
         });
         window.onbeforeunload = function (event) {
-            $rootScope.$broadcast('savestate');
+            $rootScope.$broadcast('saveState');
             console.log('window.onbeforeunload method fired');
         };
 
