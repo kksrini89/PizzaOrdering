@@ -29,7 +29,7 @@
                             </tr>
                         </tbody>
                     </table>
-                </div class="table-responsive">
+                </div>
 
                 <div class="form-group"
                      ng-class="{'has-error':CustomerDetailsForm.customerName.$invalid &&
@@ -59,17 +59,20 @@
                                             CustomerDetailsForm.mobileNumber.$dirty}">
                     <label for="phoneNumberTxt" class="col-sm-2 control-label">Mobile </label>
                     <div class="col-sm-4">
-                        <input type="number"
+                        <input type="text"
                                id="phoneNumberTxt"
                                class="form-control"
                                placeholder="Mobile"
                                name="mobileNumber"
+                               onkeypress='return (event.charCode >= 48 || event.keyCode>=48) && (event.charCode <= 57 ||event.keyCode<=57)'
                                ng-model="entity.customer.mobileNumber"
+                               ng-pattern="/(7|8|9)/" 
                                ng-minlength="10"
                                ng-maxlength="10"
-                               required /><!--ng-pattern="regexMobileNumber"-->
+                               required /><!--ng-pattern="regexMobileNumber" other useful patterns : "/^(7|8|9)\d{9}$/" --> 
                     </div>
                     <span class="help-block has-error">
+                        <span ng-show="CustomerDetailsForm.mobileNumber.$error.pattern">Not a valid number.</span>
                         <span ng-show="CustomerDetailsForm.mobileNumber.$error.required">Mobile number is required.</span>
                         <span ng-show="CustomerDetailsForm.mobileNumber.$error.minlength">Need atlest 10 digits.</span>
                         <span ng-show="CustomerDetailsForm.mobileNumber.$error.maxlength">Can not exceed more than 10 digits.</span>

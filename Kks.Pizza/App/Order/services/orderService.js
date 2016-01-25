@@ -13,16 +13,20 @@
                };
 
                function SaveState() {
-                   sessionStorage.setItem("customerDetail", angular.toJson(orderModel.customer));
-                   console.log(sessionStorage.customerDetail);
-                   sessionStorage.setItem("selectedPizzas", angular.toJson(orderModel.selectedPizzas));
-                   console.log(sessionStorage.selectedPizzas);
+                   if (typeof (Storage) !== 'undefined') {
+                       localStorage.setItem("customerDetail", angular.toJson(orderModel.customer));
+                       console.log(sessionStorage.customerDetail);
+                       localStorage.setItem("selectedPizzas", angular.toJson(orderModel.selectedPizzas));
+                       console.log(sessionStorage.selectedPizzas);
+                   }
                }
                function RestoreState() {
-                   orderModel.customer = angular.fromJson(sessionStorage.getItem("customerDetail"));
-                   console.log(orderModel.customer);
-                   orderModel.selectedPizzas = angular.fromJson(sessionStorage.getItem("selectedPizzas"));
-                   console.log(orderModel.selectedPizzas);
+                   if (typeof (Storage) !== 'undefined') {
+                       orderModel.customer = angular.fromJson(localStorage.getItem("customerDetail"));
+                       console.log(orderModel.customer);
+                       orderModel.selectedPizzas = angular.fromJson(localStorage.getItem("selectedPizzas"));
+                       console.log(orderModel.selectedPizzas);
+                   }
                }
 
                $rootScope.$on('saveState', SaveState);
