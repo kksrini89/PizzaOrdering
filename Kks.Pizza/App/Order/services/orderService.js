@@ -30,7 +30,10 @@
                }
 
                $rootScope.$on('saveState', SaveState);
-               $rootScope.$on('restoreState', RestoreState);
+               if (localStorage.getItem("customerDetail") || localStorage.getItem("selectedPizzas")) {
+                   RestoreState();
+               }
+               //$rootScope.$on('restoreState', RestoreState);
 
                return orderModel;
            }]);
