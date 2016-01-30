@@ -6,6 +6,7 @@
     <link href="Content/bootstrap-theme.css" rel="stylesheet" />
     <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
     <link href="Content/toastr.css" rel="stylesheet" />
+    <link rel='stylesheet' href='Content/loading-bar.min.css' type='text/css' media='all' />
     <link href="Content/custom.css" rel="stylesheet" />
     <script src="Scripts/jquery-2.1.4.js"></script>
     <script src="Scripts/bootstrap.js"></script>
@@ -15,6 +16,7 @@
     <script src="Scripts/angular-ui-router.js"></script>
     <script src="Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
     <script src="Scripts/angular-resouce.js"></script>
+    <script type='text/javascript' src='Scripts/loading-bar.min.js'></script>
     <script src="App/app.js"></script>
     <script src="App/Menu/controllers/menuController.js"></script>
     <script src="App/Menu/services/productResource.js"></script>
@@ -22,6 +24,7 @@
     <script src="App/Order/services/orderResource.js"></script>
     <script src="App/End/controllers/endController.js"></script>
     <script src="App/Login/controllers/loginController.js"></script>
+    <script src="App/Login/services/loginResource.js"></script>
     <script src="App/Order/services/orderService.js"></script>
     <!--<script src="App/Order/controllers/orderDetailsController.js"></script>-->
 </head>
@@ -44,7 +47,7 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav pull-right">
-                            <li><a data-ui-sref="Menu" >Menu</a></li><!-- class="nav glyphicon glyphicon-menu-hamburger" --> 
+                            <li><a data-ui-sref="Menu">Menu</a></li><!-- class="nav glyphicon glyphicon-menu-hamburger" -->
                             <li><a><u>O</u>rder</a></li>
                             <li><a><u>E</u>nd</a></li>
                             <li>

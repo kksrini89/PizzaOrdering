@@ -78,7 +78,9 @@
     <Content Include="App\End\partials\end.html" />
     <Content Include="App\Login\controllers\loginController.js" />
     <Content Include="App\Login\partials\login.html" />
+    <Content Include="App\Login\services\loginResource.js" />
     <Content Include="App\MainPage.html" />
+    <Content Include="App\Main\controllers\rootController.js" />
     <Content Include="App\Order\controllers\orderController.js" />
     <Content Include="App\Order\partials\order.html" />
     <Content Include="App\Order\services\orderResource.js" />
@@ -91,10 +93,13 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\custom.css" />
+    <Content Include="Content\loading-bar.css" />
+    <Content Include="Content\loading-bar.min.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="images\loader.gif" />
     <Content Include="images\pizza.jpg" />
     <Content Include="Scripts\angular-resouce.js" />
     <Content Include="Scripts\angular-ui-router.js" />
@@ -127,6 +132,8 @@
     <Content Include="App\app.js" />
     <Content Include="index.html" />
     <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\loading-bar.js" />
+    <Content Include="Scripts\loading-bar.min.js" />
     <Content Include="Scripts\smart-table.js" />
     <Content Include="Scripts\smart-table.min.js" />
     <Content Include="Scripts\toastr.js" />

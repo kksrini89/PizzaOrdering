@@ -1,8 +1,9 @@
 ﻿(function () {
     "use strict";
-    var app = angular.module('pizzaApp', ['ngResource', 'ui.router', 'ui.bootstrap']);
-    app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+    var app = angular.module('pizzaApp', ['ngResource', 'ui.router', 'ui.bootstrap', 'angular-loading-bar']);
+    app.config(['$stateProvider', '$urlRouterProvider', 'cfpLoadingBarProvider', function ($stateProvider, $urlRouterProvider, cfpLoadingBarProvider) {
         $urlRouterProvider.otherwise('/');
+        cfpLoadingBarProvider.spinnerTemplate = '<div id="loading-bar-spinner"><img src="images/loader.gif" id="loading-Image" alt="Loading"/></div>'
 
         $stateProvider.state('Login', {
             url: '/login',
@@ -65,8 +66,8 @@
             $rootScope.currentState = toState;
             //if (toState.name === 'Menu' || toState.name === 'OrderEntry') {
             //if (sessionStorage.restorestate == "true") {
-                //$rootScope.$broadcast('restoreState'); //let everything know we need to restore state
-                //sessionStorage.restorestate = false;
+            //$rootScope.$broadcast('restoreState'); //let everything know we need to restore state
+            //sessionStorage.restorestate = false;
             //}
             //}
             console.log('State Change Start From: ' + fromState.name + ' To ' + toState.name);

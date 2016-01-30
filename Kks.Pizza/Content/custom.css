@@ -55,3 +55,24 @@ th {
 .loginForm {
     border-color: AppWorkspace;
 }
+
+#loading-Image {
+    height: 100px;
+    width: 150px;
+    background-color: #32718b;
+}
+
+/*
+ * override the default CSS for "Loading Bar"
+ */
+
+
+#loading-bar-spinner {
+    /*#region Make the element to center of the screen */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -75px;
+    margin-top: -50px;
+    /*#endregion */
+}
