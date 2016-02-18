@@ -3,7 +3,7 @@
     var app = angular.module('pizzaApp', ['ngResource', 'ui.router', 'ui.bootstrap', 'angular-loading-bar']);
     app.config(['$stateProvider', '$urlRouterProvider', 'cfpLoadingBarProvider', function ($stateProvider, $urlRouterProvider, cfpLoadingBarProvider) {
         $urlRouterProvider.otherwise('/');
-        cfpLoadingBarProvider.spinnerTemplate = '<div id="loading-bar-spinner"><img src="images/loader.gif" id="loading-Image" alt="Loading"/></div>'
+        //cfpLoadingBarProvider.spinnerTemplate = '<div id="loading-bar-spinner"><img src="images/loader.gif" id="loading-Image" alt="Loading"/></div>'
 
         $stateProvider.state('Login', {
             url: '/login',

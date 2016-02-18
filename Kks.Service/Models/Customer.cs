@@ -8,7 +8,7 @@ namespace Kks.Service.Models
     public class Customer
     {
         public string Name { get; set; }
-        public int MobileNumber { get; set; }
+        public string MobileNumber { get; set; }
         public string Address { get; set; }
     }
 }

@@ -1,9 +1,7 @@
 ﻿using Kks.Service.Models;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
@@ -25,11 +23,20 @@ namespace Kks.Service.Controllers
         }
 
         // POST api/order
-        public void Post([FromBody]Order order)
+        public void Post([FromBody]JObject order)
         {
-            if (order != null)
+            dynamic json = order;
+            JObject customer = json.customer;
+            JArray products = json.selectedPizzas;
+            DateTime date = json.orderedDate;
+
+            var orderedCustomer = customer.ToObject<Customer>();
+            var orderedProducts = products.ToObject<List<Product>>();
+            var finalOrder = new Order() { Customer = orderedCustomer, Products = orderedProducts, OrderedDate = date };
+
+            if (finalOrder != null)
             {
-                bool value = new Repository().CreateOrder(order);
+                bool value = new Repository().CreateOrder(finalOrder);
             }
         }
 
