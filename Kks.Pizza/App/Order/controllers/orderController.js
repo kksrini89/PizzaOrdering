@@ -1,6 +1,6 @@
 ﻿(function () {
     angular.module('pizzaApp')
-    .controller('orderController', ['$scope', '$state', '$stateParams', 'orderResource', 'orderService', function ($scope, $state, $stateParams, orderResource, orderService) {
+    .controller('orderController', ['$scope', '$filter', '$state', '$stateParams', 'orderResource', 'orderService', function ($scope, $filter, $state, $stateParams, orderResource, orderService) {
         //var viewModel = {
         //    customer: {
         //        name: "",
@@ -32,7 +32,7 @@
                 //                + currentdate.getMinutes() + ":"
                 //                + currentdate.getSeconds();
                 //order.orderedDate = orderService.orderedDate = new Date();
-                order.orderedDate = new Date();
+                order.orderedDate = new Date().toLocaleString();
                 orderResource.saveItem(order)
                 .$promise.then(function (data) {
                     //console.log("Success", data);

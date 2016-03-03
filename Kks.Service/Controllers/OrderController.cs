@@ -32,6 +32,8 @@ namespace Kks.Service.Controllers
 
             var orderedCustomer = customer.ToObject<Customer>();
             var orderedProducts = products.ToObject<List<Product>>();
+
+            //date = DateTime.SpecifyKind(date, DateTimeKind.Local);
             var finalOrder = new Order() { Customer = orderedCustomer, Products = orderedProducts, OrderedDate = date };
 
             if (finalOrder != null)
