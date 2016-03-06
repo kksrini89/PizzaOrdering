@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
@@ -33,8 +34,10 @@ namespace Kks.Service.Controllers
             var orderedCustomer = customer.ToObject<Customer>();
             var orderedProducts = products.ToObject<List<Product>>();
 
-            //date = DateTime.SpecifyKind(date, DateTimeKind.Local);
-            var finalOrder = new Order() { Customer = orderedCustomer, Products = orderedProducts, OrderedDate = date };
+            date = DateTime.SpecifyKind(date, DateTimeKind.Local);
+            //string toIndianDateTime = date.ToString(@"dd/MM/yyyy hh:mm:ss tt", new CultureInfo("en-US")); If date is not parsed as local then en-US will be helpful.
+            string toIndianDateTime = date.ToString(@"dd/MM/yyyy hh:mm:ss tt");
+            var finalOrder = new Order() { Customer = orderedCustomer, Products = orderedProducts, OrderedDate = toIndianDateTime };
 
             if (finalOrder != null)
             {

@@ -72,6 +72,8 @@
             //}
             console.log('State Change Start From: ' + fromState.name + ' To ' + toState.name);
         });
+
+        // Reload or Refresh - Data Persistence logic
         window.onbeforeunload = function (event) {
             $rootScope.$broadcast('saveState');
             console.log('window.onbeforeunload method fired');

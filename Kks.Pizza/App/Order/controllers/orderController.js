@@ -32,7 +32,8 @@
                 //                + currentdate.getMinutes() + ":"
                 //                + currentdate.getSeconds();
                 //order.orderedDate = orderService.orderedDate = new Date();
-                order.orderedDate = new Date().toLocaleString();
+                //order.orderedDate = new Date().toLocaleString();
+                order.orderedDate = new Date().toUTCString();
                 orderResource.saveItem(order)
                 .$promise.then(function (data) {
                     //console.log("Success", data);

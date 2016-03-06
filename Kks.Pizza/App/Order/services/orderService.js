@@ -14,25 +14,41 @@
 
                function SaveState() {
                    if (typeof (Storage) !== 'undefined') {
-                       localStorage.setItem("customerDetail", angular.toJson(orderModel.customer));
+                       sessionStorage.setItem("customerDetail", angular.toJson(orderModel.customer));
                        console.log(sessionStorage.customerDetail);
-                       localStorage.setItem("selectedPizzas", angular.toJson(orderModel.selectedPizzas));
+                       sessionStorage.setItem("selectedPizzas", angular.toJson(orderModel.selectedPizzas));
                        console.log(sessionStorage.selectedPizzas);
+
+                       //localStorage.setItem("customerDetail", angular.toJson(orderModel.customer));
+                       //console.log(sessionStorage.customerDetail);
+                       //localStorage.setItem("selectedPizzas", angular.toJson(orderModel.selectedPizzas));
+                       //console.log(sessionStorage.selectedPizzas);
                    }
                }
                function RestoreState() {
                    if (typeof (Storage) !== 'undefined') {
-                       orderModel.customer = angular.fromJson(localStorage.getItem("customerDetail"));
+
+                       orderModel.customer = angular.fromJson(sessionStorage.getItem("customerDetail"));
                        console.log(orderModel.customer);
-                       orderModel.selectedPizzas = angular.fromJson(localStorage.getItem("selectedPizzas"));
+                       orderModel.selectedPizzas = angular.fromJson(sessionStorage.getItem("selectedPizzas"));
                        console.log(orderModel.selectedPizzas);
+
+                       //orderModel.customer = angular.fromJson(localStorage.getItem("customerDetail"));
+                       //console.log(orderModel.customer);
+                       //orderModel.selectedPizzas = angular.fromJson(localStorage.getItem("selectedPizzas"));
+                       //console.log(orderModel.selectedPizzas);
                    }
                }
 
                $rootScope.$on('saveState', SaveState);
-               if (localStorage.getItem("customerDetail") || localStorage.getItem("selectedPizzas")) {
+               if (sessionStorage.getItem("customerDetail") || sessionStorage.getItem("selectedPizzas")) {
                    RestoreState();
                }
+
+               //if (localStorage.getItem("customerDetail") || localStorage.getItem("selectedPizzas")) {
+               //    RestoreState();
+               //}
+
                //$rootScope.$on('restoreState', RestoreState);
 
                return orderModel;
