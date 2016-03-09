@@ -62,7 +62,7 @@
                                     <li><a href="#">Settings</a></li>
                                     <!-- data-ui-sref="Login" -->
                                     <li ng-show="!isUserLoggedIn"><a class="glyphicon glyphicon-log-in" ng-click="login()">Login</a></li>
-                                    <!--<li ng-show="isUserLoggedIn && (auth.profile!=null)">{{auth.profile.email}}</li>-->
+                                    <li ng-show="isUserLoggedIn && (auth!=null)"><span style="text-align:center;">{{auth.profile.nickname}}</span></li>
                                     <li ng-show="isUserLoggedIn"><a class="glyphicon glyphicon-log-out" ng-click="logout()">Logout</a></li>
                                 </ul>
                             </li>
