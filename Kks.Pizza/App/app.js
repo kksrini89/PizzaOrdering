@@ -1,7 +1,7 @@
 ﻿(function () {
     "use strict";
-    var app = angular.module('pizzaApp', ['ngResource', 'ui.router', 'ui.bootstrap', 'angular-loading-bar']);
-    app.config(['$stateProvider', '$urlRouterProvider', 'cfpLoadingBarProvider', function ($stateProvider, $urlRouterProvider, cfpLoadingBarProvider) {
+    var app = angular.module('pizzaApp', ['auth0', 'ngResource', 'ui.router', 'ui.bootstrap', 'angular-loading-bar']);
+    app.config(['authProvider', '$stateProvider', '$urlRouterProvider', 'cfpLoadingBarProvider', function (authProvider, $stateProvider, $urlRouterProvider, cfpLoadingBarProvider) {
         $urlRouterProvider.otherwise('/');
         //cfpLoadingBarProvider.spinnerTemplate = '<div id="loading-bar-spinner"><img src="images/loader.gif" id="loading-Image" alt="Loading"/></div>'
 
@@ -24,7 +24,8 @@
                 products: function (productResource) {
                     return productResource.getProducts();
                 }
-            }
+            },
+            requiresLogin: true
         })
         .state('OrderEntry', {
             url: '/orderentry',
@@ -56,9 +57,18 @@
                 }
             }
         });
+
+        //Auth0 Related.
+        authProvider.init({
+            domain: DOMAIN,
+            clientId: CLIENT_ID,
+            loginUrl: '/login'
+        })
     }]);
 
-    app.run(['$rootScope', '$location', '$state', '$stateParams', function ($rootScope, $location, $state, $stateParams) {
+    app.run(['auth', '$rootScope', '$location', '$state', '$stateParams', function (auth, $rootScope, $location, $state, $stateParams) {
+        auth.hookEvents(); //Auth0 related.
+
         console.log("app run");
 
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {

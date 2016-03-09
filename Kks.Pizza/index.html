@@ -14,10 +14,17 @@
     <script src="Scripts/toastr.js"></script>
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-ui-router.js"></script>
+    <!-- Auth0 Scripts -->
+    <script src="//cdn.auth0.com/js/lock-7.min.js"></script>
+    <script src="//cdn.auth0.com/w2/auth0-angular-4.js"> </script>
+
     <script src="Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
     <script src="Scripts/angular-resouce.js"></script>
     <script type='text/javascript' src='Scripts/loading-bar.min.js'></script>
+
+    <script src="App/config.js"></script>
     <script src="App/app.js"></script>
+    <script src="App/Main/controllers/rootController.js"></script>
     <script src="App/Menu/controllers/menuController.js"></script>
     <script src="App/Menu/services/productResource.js"></script>
     <script src="App/Order/controllers/orderController.js"></script>
@@ -26,9 +33,8 @@
     <script src="App/Login/controllers/loginController.js"></script>
     <script src="App/Login/services/loginResource.js"></script>
     <script src="App/Order/services/orderService.js"></script>
-    <!--<script src="App/Order/controllers/orderDetailsController.js"></script>-->
 </head>
-<body>
+<body ng-controller="rootController">
     <div class="container">
         <div class="row">
             <nav class="navbar navbar-inverse">
@@ -54,7 +60,10 @@
                                 <a class="dropdown-toggle glyphicon glyphicon-log-in" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">Settings</a></li>
-                                    <li><a data-ui-sref="Login">Login</a></li>
+                                    <!-- data-ui-sref="Login" -->
+                                    <li ng-show="!isUserLoggedIn"><a class="glyphicon glyphicon-log-in" ng-click="login()">Login</a></li>
+                                    <!--<li ng-show="isUserLoggedIn && (auth.profile!=null)">{{auth.profile.email}}</li>-->
+                                    <li ng-show="isUserLoggedIn"><a class="glyphicon glyphicon-log-out" ng-click="logout()">Logout</a></li>
                                 </ul>
                             </li>
                             <!--<li><a><i class="glyphicon glyphicon-plus"></i>Add Product</a></li>-->
