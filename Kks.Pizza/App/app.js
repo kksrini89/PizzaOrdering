@@ -1,7 +1,7 @@
 ﻿(function () {
     "use strict";
-    var app = angular.module('pizzaApp', ['auth0', 'ngResource', 'ui.router', 'ui.bootstrap', 'angular-loading-bar']);
-    app.config(['authProvider', '$stateProvider', '$urlRouterProvider', 'cfpLoadingBarProvider', function (authProvider, $stateProvider, $urlRouterProvider, cfpLoadingBarProvider) {
+    var app = angular.module('pizzaApp', ['auth0', 'ngResource', 'ui.router', 'ui.bootstrap', 'angular-loading-bar', 'angular-storage', 'angular-jwt']);
+    app.config(['authProvider', '$stateProvider', '$urlRouterProvider', 'jwtInterceptorProvider', 'cfpLoadingBarProvider', function (authProvider, $stateProvider, $urlRouterProvider, jwtInterceptorProvider, cfpLoadingBarProvider) {
         $urlRouterProvider.otherwise('/');
         //cfpLoadingBarProvider.spinnerTemplate = '<div id="loading-bar-spinner"><img src="images/loader.gif" id="loading-Image" alt="Loading"/></div>'
 
@@ -63,24 +63,42 @@
             domain: DOMAIN,
             clientId: CLIENT_ID,
             loginUrl: '/login'
-        })
+        });
+
+        jwtInterceptorProvider.tokenGetter = function (store) {
+            return store.get('token');
+        }
     }]);
 
-    app.run(['auth', '$rootScope', '$location', '$state', '$stateParams', function (auth, $rootScope, $location, $state, $stateParams) {
-        auth.hookEvents(); //Auth0 related.
-
+    app.run(['$rootScope', 'auth', 'store', 'jwtHelper', '$location', '$state', '$stateParams', function ($rootScope, auth, store, jwtHelper, $location, $state, $stateParams) {
         console.log("app run");
 
-        $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
-            $rootScope.prevState = fromState;
-            $rootScope.currentState = toState;
+        $rootScope.$on('$locationChangeStart', function () {
+            if (!auth.isAuthenticated) {
+                var token = store.get('token');
+                if (token) {
+                    if (!jwtHelper.isTokenExpired(token)) {
+                        auth.authenticate(store.get('profile'), token);
+                    }
+                    else {
+                        $location.path('/');
+                    }
+                }
+            }
+        });
+
+        $rootScope.$on('$stateChangeStart', function () {
+            //$rootScope.prevState = fromState;
+            //$rootScope.currentState = toState;
             //if (toState.name === 'Menu' || toState.name === 'OrderEntry') {
             //if (sessionStorage.restorestate == "true") {
             //$rootScope.$broadcast('restoreState'); //let everything know we need to restore state
             //sessionStorage.restorestate = false;
             //}
             //}
-            console.log('State Change Start From: ' + fromState.name + ' To ' + toState.name);
+            //console.log('State Change Start From: ' + fromState.name + ' To ' + toState.name);
+
+
         });
 
         // Reload or Refresh - Data Persistence logic
@@ -89,19 +107,7 @@
             console.log('window.onbeforeunload method fired');
         };
 
-        $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-
-        });
-
-        //$rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {          
-        //    $rootScope.prevState = fromState;
-        //    $rootScope.currentState = toState;            
-        //    console.log('should be loading:' + toState + " - " + fromState);
-        //});
-
-        //$rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {            
-
-        //});
+        auth.hookEvents(); //Auth0 related.
     }]);
 
     app.constant('appSettings', {
