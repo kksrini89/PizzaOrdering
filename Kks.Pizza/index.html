@@ -7,6 +7,7 @@
     <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
     <link href="Content/toastr.css" rel="stylesheet" />
     <link rel='stylesheet' href='Content/loading-bar.min.css' type='text/css' media='all' />
+    <link href="Content/introjs.min.css" rel="stylesheet" />
     <link href="Content/custom.css" rel="stylesheet" />
     <script src="Scripts/jquery-2.1.4.js"></script>
     <script src="Scripts/bootstrap.js"></script>
@@ -14,14 +15,20 @@
     <script src="Scripts/toastr.js"></script>
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-ui-router.js"></script>
+
     <!-- Auth0 Scripts -->
     <script src="//cdn.auth0.com/js/lock-7.min.js"></script>
     <script src="//cdn.auth0.com/w2/auth0-angular-4.js"> </script>
 
+    <!-- angular-jwt and angular-storage -->
+    <script type="text/javascript" src="//cdn.rawgit.com/auth0/angular-storage/master/dist/angular-storage.js"></script>
+    <script type="text/javascript" src="//cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"></script>
+
     <script src="Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
     <script src="Scripts/angular-resouce.js"></script>
     <script type='text/javascript' src='Scripts/loading-bar.min.js'></script>
-
+    <script type='text/javascript' src="Scripts/intro.js"></script>
+    
     <script src="App/config.js"></script>
     <script src="App/app.js"></script>
     <script src="App/Main/controllers/rootController.js"></script>
@@ -53,9 +60,9 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav pull-right">
-                            <li><a data-ui-sref="Menu">Menu</a></li><!-- class="nav glyphicon glyphicon-menu-hamburger" -->
-                            <li><a><u>O</u>rder</a></li>
-                            <li><a><u>E</u>nd</a></li>
+                            <li id="menu"><a>Menu</a></li><!-- class="nav glyphicon glyphicon-menu-hamburger" -->
+                            <li id="order"><a><u>O</u>rder</a></li>
+                            <li id="end"><a><u>E</u>nd</a></li>
                             <li>
                                 <a class="dropdown-toggle glyphicon glyphicon-log-in" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
                                 <ul class="dropdown-menu">

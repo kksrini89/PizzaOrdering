@@ -13,7 +13,8 @@
 
         $stateProvider.state('Home', {
             url: '/',
-            templateUrl: 'App/MainPage.html'
+            templateUrl: 'App/MainPage.html',
+            //controller: 'rootController'
         })
         .state('Menu', {
             url: '/menu',
@@ -35,7 +36,8 @@
             //    }
             //},
             templateUrl: 'App/Order/partials/order.html',
-            controller: 'orderController'
+            controller: 'orderController',
+            requiresLogin: true
         })
         .state('End', {
             url: '/end',
@@ -44,7 +46,8 @@
                 orderedDate: null
             },
             templateUrl: 'App/End/partials/end.html',
-            controller: 'endController'
+            controller: 'endController',
+            requiresLogin: true
         })
         .state('OrderDetails', {
             url: '/orderDetails',
@@ -65,9 +68,9 @@
             loginUrl: '/login'
         });
 
-        jwtInterceptorProvider.tokenGetter = function (store) {
-            return store.get('token');
-        }
+        //jwtInterceptorProvider.tokenGetter = function (store) {
+        //    return store.get('token');
+        //}
     }]);
 
     app.run(['$rootScope', 'auth', 'store', 'jwtHelper', '$location', '$state', '$stateParams', function ($rootScope, auth, store, jwtHelper, $location, $state, $stateParams) {
